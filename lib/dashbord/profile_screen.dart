@@ -12,14 +12,27 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(onPressed: (){Navigator.pop(context);}, icon: Icon(Icons.arrow_back_ios_outlined)),
+        toolbarHeight: 30,
+      ),
       // backgroundColor: Colors.black.withOpacity(0.7),
       body: ListView(
-        padding: EdgeInsets.only(top: 90, left: 10, right: 10),
+        padding: EdgeInsets.only(top: 40, left: 10, right: 10),
         children: [
-          CircleAvatar(
-            radius: 100,
-            backgroundImage: NetworkImage(
-              "https://cdn-icons-png.flaticon.com/128/11696/11696686.png",
+          Container(
+            height: 70,
+            width: 70,
+            decoration: BoxDecoration(
+              shape: BoxShape.circle,
+              border: Border.all(width: 0.5,color: Colors.blue)
+            ),
+            alignment: Alignment.center,
+            child: CircleAvatar(
+              radius: 30,
+              backgroundImage: NetworkImage(
+                "https://avatars.githubusercontent.com/u/232642638?v=4",
+              ),
             ),
           ),
           SizedBox(height: 10),
@@ -40,25 +53,26 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  "Experienced App Developer (Native/Hybrid) with over 6 Months of experience in App Development working on my own projects and freelancing and 5 months plus in Flutter.",
+                  "I am currently studying Computer Science and Technology at Dinajpur Polytechnic Institute.\n\n"
+                  "I am a passionate Flutter Developer and Junior Mobile App Developer specializing in building high-performance, scalable cross-platform applications for Android and iOS using Dart and the Flutter Framework. I enjoy creating clean, responsive, and user-friendly mobile applications while continuously improving my skills in modern app development.\n\n",
+
                   textAlign: TextAlign.justify,
-                  style: TextStyle(
+                  style: const TextStyle(
                     fontSize: 15,
-                    // fontWeight: FontWeight.bold,
-                    // color: Colors.white
+                    height: 1.6, // Better line spacing
                   ),
                 ),
               ],
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 5),
           Center(
             child: Text(
               "Connect with me",
               style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
             ),
           ),
-          SizedBox(height: 20),
+          SizedBox(height: 30),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
@@ -145,7 +159,6 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
                   try {
                     await launchUrl(phoneUri);
                   } catch (e) {
-
                     debugPrint('Could not launch phone dialer: $e');
                   }
                 },
@@ -158,14 +171,13 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               ),
             ],
           ),
-          SizedBox(height: 30),
+          SizedBox(height: 50),
           ElevatedButton(
             onPressed: () async {
-              final Uri url = Uri.parse("https://drive.google.com/file/d/1D8NCfnz3QEAOYSpCUU6G3H9bxTDTGFCn/view?usp=drive_link");
-              if (!await launchUrl(
-                url,
-                mode: LaunchMode.externalApplication,
-              )) {
+              final Uri url = Uri.parse(
+                "https://drive.google.com/file/d/1D8NCfnz3QEAOYSpCUU6G3H9bxTDTGFCn/view?usp=drive_link",
+              );
+              if (!await launchUrl(url, mode: LaunchMode.externalApplication)) {
                 throw Exception('Could not launch $url');
               }
             },
@@ -176,10 +188,7 @@ class _MyProfileScreenState extends State<MyProfileScreen> {
               shadowColor: Colors.tealAccent,
               elevation: 10,
 
-              minimumSize:Size(
-                150,
-                50,
-              ),
+              minimumSize: Size(150, 50),
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(30),
               ),

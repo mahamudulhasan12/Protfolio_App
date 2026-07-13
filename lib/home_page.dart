@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio_ui/dashbord/MyConnectScreen.dart';
+
 import 'package:portfolio_ui/dashbord/education_screen.dart';
 import 'package:portfolio_ui/dashbord/hobby_screen.dart';
 import 'package:portfolio_ui/dashbord/profile_screen.dart';
+import 'package:portfolio_ui/dashbord/project_screen.dart';
 import 'package:portfolio_ui/dashbord/skill_screen.dart';
 import 'package:portfolio_ui/dashbord/work_screen.dart';
 
@@ -27,34 +28,37 @@ class _HomePageState extends State<HomePage> {
               width: MediaQuery.of(context).size.width,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.only(bottomLeft: Radius.circular(50),bottomRight: Radius.circular(50)),
-                  gradient: LinearGradient(
-                    colors: <Color>[Colors.blue, Colors.blue.shade300],
-                  )),
+                  color: Colors.blue.shade300,
+                  ),
             ),
           ),
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Column(
                 children: [
                   const SizedBox(height: 30),
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
-                    children: const [
-                      Text(
-                        "My Dashboard",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold,
-                        ),
+                    children:  [
+                      Image.network(
+                        height: 100,
+                        width: 100,
+                        fit: BoxFit.cover,
+                        "https://cdn-icons-png.flaticon.com/128/12304/12304404.png",
                       ),
+
                     ],
                   ),
-                  const SizedBox(height: 100),
+                  SizedBox(height: 10,),
+                  Text("Developer Portfolio",style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,color: Colors.black
+                  ),),
+                  SizedBox(height: 10),
                   Expanded(
                     child: Padding(
-                      padding: const EdgeInsets.all(20.0),
+                      padding: EdgeInsets.all(20.0),
                       child: GridView.count(
                         crossAxisCount: 2,
                         mainAxisSpacing: 10,
@@ -62,48 +66,56 @@ class _HomePageState extends State<HomePage> {
                         primary: false,
                         children: [
                           Card(
+
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            shadowColor: Colors.grey,
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>MyProfileScreen()));
                               },
-                              splashColor: Colors.blue,
+                              // splashColor: Colors.blue,
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(Icons.person,
-                                        size: 70, color: Colors.blue),
+                                  children:[
+                                    Image.network(
+                                        height: 50,
+                                        width: 50,
+                                        "https://cdn-icons-png.flaticon.com/128/1077/1077114.png"
+                                    ),
                                     Text("Profile",style: TextStyle(
-                                        fontSize: 15,fontWeight: FontWeight.bold
+                                        fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
                               ),
                             ),
+
                           ),
                           Card(
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>MyWorkScreen()));
                               },
-                              splashColor: Colors.blue,
+
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(
-                                      Icons.work,
-                                      size: 70,
-                                      color: Colors.blue,
+                                  children: [
+                                    Image.network(
+                                        height: 50,
+                                        width: 50,
+                                        "https://cdn-icons-png.flaticon.com/128/12969/12969657.png"
                                     ),
                                     Text("Work",style: TextStyle(
-                                        fontSize: 15,fontWeight: FontWeight.bold
+                                        fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
@@ -114,6 +126,7 @@ class _HomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>MySkillScreen()));
@@ -122,14 +135,14 @@ class _HomePageState extends State<HomePage> {
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(
-                                      Icons.engineering,
-                                      size: 70,
-                                      color: Colors.blue,
+                                  children:  [
+                                    Image.network(
+                                        height: 50,
+                                        width: 50,
+                                        "https://cdn-icons-png.flaticon.com/128/9583/9583761.png"
                                     ),
                                     Text("Skill",style: TextStyle(
-                                        fontSize: 15,fontWeight: FontWeight.bold
+                                        fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
@@ -140,22 +153,24 @@ class _HomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>MyEducationScreen()));
                               },
-                              splashColor: Colors.blue,
+                              // splashColor: Colors.blue,
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(
-                                      Icons.school_rounded,
-                                      size: 70,
-                                      color: Colors.blue,
+                                  children:  [
+                                    Image.network(
+                                        height: 50,
+                                        width: 50,
+                                        "https://cdn-icons-png.flaticon.com/128/1940/1940611.png"
                                     ),
+
                                     Text("Education",style: TextStyle(
-                                        fontSize: 15,fontWeight: FontWeight.bold
+                                        fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
@@ -166,22 +181,23 @@ class _HomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHobyScreen()));
                               },
-                              splashColor: Colors.blue,
+                              // splashColor: Colors.blue,
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(
-                                      Icons.heart_broken,
-                                      size: 70,
-                                      color: Colors.blue,
+                                  children:  [
+                                    Image.network(
+                                        height: 50,
+                                        width: 50,
+                                        "https://cdn-icons-png.flaticon.com/128/13351/13351041.png"
                                     ),
                                     Text("Hobby",style: TextStyle(
-                                        fontSize: 15,fontWeight: FontWeight.bold
+                                        fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
@@ -192,28 +208,29 @@ class _HomePageState extends State<HomePage> {
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(20),
                             ),
+                            color: Colors.orange.shade50,
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyConnectScreen()));
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyProjectScreen()));
                                },
 
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
-                                  children: const [
-                                    Icon(
-                                      Icons.group,
-                                      size: 70,
-                                      color: Colors.blue,
+                                  children: [
+                                    Image.network(
+                                      height: 50,
+                                      width: 50,
+                                      "https://cdn-icons-png.flaticon.com/128/5956/5956597.png"
                                     ),
-                                    Text("Connect",style: TextStyle(
-                                      fontSize: 15,fontWeight: FontWeight.bold
+                                    Text("Project OverView",style: TextStyle(
+                                      fontSize: 15,fontWeight: FontWeight.bold,color: Colors.blue,
                                     ),),
                                   ],
                                 ),
                               ),
+                              ),
                             ),
-                          )
                         ],
                       ),
                     ),

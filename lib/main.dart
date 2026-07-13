@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:portfolio_ui/spalis_screen.dart';
 
 import 'home_page.dart';
 
@@ -16,7 +17,7 @@ class MyApp extends StatelessWidget {
       darkTheme: ThemeData.dark(),
       themeMode: ThemeMode.system,
       debugShowCheckedModeBanner: false,
-      home: HomePage(),
+      home: SpalisScreen(),
     );
   }
 }
