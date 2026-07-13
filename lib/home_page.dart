@@ -6,6 +6,7 @@ import 'package:portfolio_ui/dashbord/profile_screen.dart';
 import 'package:portfolio_ui/dashbord/skill_screen.dart';
 import 'package:portfolio_ui/dashbord/work_screen.dart';
 
+
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
@@ -66,12 +67,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MyProfileScreen(),
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyProfileScreen()));
                               },
                               splashColor: Colors.blue,
                               child: Center(
@@ -94,12 +90,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => const MyWorkScreen(),
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyWorkScreen()));
                               },
                               splashColor: Colors.blue,
                               child: Center(
@@ -125,14 +116,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MySkillScreen(),
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MySkillScreen()));
                               },
-                              splashColor: Colors.blue,
+                              // splashColor: Colors.blue,
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
@@ -156,12 +142,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MyEducationScreen(),
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyEducationScreen()));
                               },
                               splashColor: Colors.blue,
                               child: Center(
@@ -173,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                                       size: 70,
                                       color: Colors.blue,
                                     ),
-                                    Text("Edication",style: TextStyle(
+                                    Text("Education",style: TextStyle(
                                         fontSize: 15,fontWeight: FontWeight.bold
                                     ),),
                                   ],
@@ -187,12 +168,7 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => MyHobyScreen(),
-                                  ),
-                                );
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyHobyScreen()));
                               },
                               splashColor: Colors.blue,
                               child: Center(
@@ -218,15 +194,9 @@ class _HomePageState extends State<HomePage> {
                             ),
                             child: InkWell(
                               onTap: () {
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                    const MyConnectScreen(),
-                                  ),
-                                );
-                              },
-                              splashColor: Colors.blue,
+                                Navigator.push(context, MaterialPageRoute(builder: (context)=>MyConnectScreen()));
+                               },
+
                               child: Center(
                                 child: Column(
                                   mainAxisAlignment: MainAxisAlignment.center,
